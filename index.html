@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Study Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f5f7fa; }
+    .sidebar { height: 100vh; }
+    .nav-link { cursor: pointer; }
+    .card { border-radius: 15px; }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <span class="navbar-brand">🤖 AI Study Companion</span>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Sidebar -->
+    <div class="col-md-2 bg-white sidebar shadow-sm p-3">
+      <h5 class="mb-4">Menu</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" onclick="showPage('roadmap')">📍 Roadmap</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="showPage('chat')">💬 Chat AI</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="showPage('skill')">⚡ Skill</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="showPage('quiz')">🧠 Quiz</a></li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="col-md-10 p-4">
+
+      <!-- ROADMAP -->
+      <div id="roadmap" class="page">
+        <h3>📍 Personalized Learning Roadmap</h3>
+        <p class="text-muted">Disusun berdasarkan kemampuan dan kelemahan kamu</p>
+
+        <div class="card p-3 mb-3">
+          <h5>Level 1: Fundamental</h5>
+          <ul>
+            <li>HTML Dasar</li>
+            <li>Struktur Website</li>
+          </ul>
+        </div>
+
+        <div class="card p-3 mb-3">
+          <h5>Level 2: Intermediate</h5>
+          <ul>
+            <li>CSS & Bootstrap</li>
+            <li>Responsive Design</li>
+          </ul>
+        </div>
+
+        <div class="card p-3">
+          <h5>Level 3: Advanced</h5>
+          <ul>
+            <li>JavaScript</li>
+            <li>Backend Integration</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CHAT -->
+      <div id="chat" class="page" style="display:none">
+        <h3>💬 AI Tutor Chat</h3>
+        <div class="card">
+          <div class="card-body" style="height:250px; overflow-y:auto;">
+            <p><strong>AI:</strong> Halo! Aku siap bantu belajarmu 🚀</p>
+            <p><strong>Kamu:</strong> Jelaskan HTML dong</p>
+          </div>
+          <div class="card-footer">
+            <input type="text" class="form-control" placeholder="Tanya ke AI...">
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL -->
+      <div id="skill" class="page" style="display:none">
+        <h3>⚡ Skill Analysis</h3>
+        <p class="text-muted">Analisis kemampuan berdasarkan aktivitas belajar</p>
+
+        <label>HTML</label>
+        <div class="progress mb-3">
+          <div class="progress-bar" style="width:85%">85%</div>
+        </div>
+
+        <label>CSS</label>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-success" style="width:70%">70%</div>
+        </div>
+
+        <label>JavaScript</label>
+        <div class="progress mb-3">
+          <div class="progress-bar bg-warning" style="width:45%">45%</div>
+        </div>
+      </div>
+
+      <!-- QUIZ -->
+      <div id="quiz" class="page" style="display:none">
+        <h3>🧠 Adaptive Quiz</h3>
+        <p class="text-muted">Soal akan menyesuaikan kemampuan kamu</p>
+
+        <div class="card p-3">
+          <p><strong>Pertanyaan:</strong> Apa fungsi utama HTML?</p>
+          <button class="btn btn-outline-primary mb-2">Membuat struktur website</button>
+          <button class="btn btn-outline-danger mb-2">Mengatur warna</button>
+          <button class="btn btn-outline-success">Mengelola database</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function showPage(pageId) {
+  const pages = document.querySelectorAll('.page');
+  pages.forEach(p => p.style.display = 'none');
+  document.getElementById(pageId).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
